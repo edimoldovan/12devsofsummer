@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Blog</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    <h2>My Blog</h2>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+    {{partial header}}
+    {{partial posts}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="channelr">
+    {{partial header}}
+    {{partial channel}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="postr">
+    {{partial header}}
+    {{partial post}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_header">
+    <ul>
+    {{#each channel in channels}}
+      <li>
+        {{#linkTo "channelr" channel}}{{channel.title}}{{/linkTo}}
+      </li>
+    {{/each}}
+    </ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_posts">
+    <ul class="clear">
+    {{#each post in posts}}
+      <li class="clear">
+        <h2>{{#linkTo "postr" post}}{{post.title}}{{/linkTo}}</h2>
+      </li>
+    {{/each}}
+    </ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_channel">
+    <ul class="clear">
+    {{#each post in posts}}
+      <li class="clear">
+        <h2>{{#linkTo "postr" post}}{{post.title}}{{/linkTo}}</h2>
+      </li>
+    {{/each}}
+    </ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_post">
+    <article class="clear">
+      <h2 class="clear">{{post.title}}</h2>
+      <div class="clear">{{post.body}}</div>
+    </article>
+  </script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.4.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.5.js"></script>
+  <script src="js/libs/ember-data-latest.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

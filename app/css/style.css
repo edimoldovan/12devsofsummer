@@ -1,0 +1,45 @@
+/* Put your CSS here */
+html, body {
+    margin: 0;
+}
+
+h1,
+h2 {
+	float: left;
+	padding: 0 10px;
+}
+
+ul {
+	list-style: none;
+	float: left;
+	padding: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+li {
+	float: left;
+}
+
+li h2 {
+	padding: 0;
+	margin: 0;
+}
+
+li a {
+	float: left;
+	padding: 10px;
+	margin: 0;
+	color: #cc3300;
+}
+
+div {
+	float: left;
+	padding: 0 10px;
+}
+
+article {
+	float: left;
+}
